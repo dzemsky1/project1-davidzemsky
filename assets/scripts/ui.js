@@ -26,12 +26,19 @@ const onSignOutSuccess = function () {
   $('#sign-in').show()
   $('#sign-up').show()
   $('#sign-out').hide()
+  $('#game-board').hide()
   store.user = null
+}
+
+const onNewGameSuccess = function () {
+  $('#response-message').text('Let the games begin!')
+  $('#game-board').show()
 }
 
 module.exports = {
   onSignUpSuccess,
   error,
   onSignInSuccess,
-  onSignOutSuccess
+  onSignOutSuccess,
+  onNewGameSuccess
 }
