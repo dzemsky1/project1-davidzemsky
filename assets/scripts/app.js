@@ -7,6 +7,8 @@ const authEvents = require('./events')
 // require('./example')
 
 $(() => {
+  $('sign-out').hide()
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
+  $('#sign-out').on('click', authEvents.onSignOut)
 })
