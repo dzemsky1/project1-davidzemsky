@@ -5,12 +5,18 @@ const onSignUpSuccess = function () {
   $('#sign-up').trigger('reset')
 }
 
-const onSignUpFailure = function (err) {
+const error = function (err) {
   console.error(err)
   $('#response-message').text('Error! Error! What is wrong with you!!')
 }
 
+const onSignInSuccess = function () {
+  $('#response-message').text('All Signed In and Ready to Go!')
+  $('#sign-in').trigger('reset')
+}
+
 module.exports = {
   onSignUpSuccess,
-  onSignUpFailure
+  error,
+  onSignInSuccess
 }
