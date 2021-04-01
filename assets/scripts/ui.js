@@ -18,6 +18,7 @@ const onSignInSuccess = function (response) {
   $('#sign-in').hide()
   $('#sign-up').hide()
   $('#sign-out').show()
+  $('#new-game').show()
 }
 
 const onSignOutSuccess = function () {
