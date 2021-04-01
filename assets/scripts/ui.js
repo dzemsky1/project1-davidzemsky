@@ -35,10 +35,15 @@ const onNewGameSuccess = function () {
   $('#game-board').show()
 }
 
+const onNewTurnSuccess = function () {
+  $('#test').text('hey!')
+}
+
 module.exports = {
   onSignUpSuccess,
   error,
   onSignInSuccess,
   onSignOutSuccess,
-  onNewGameSuccess
+  onNewGameSuccess,
+  onNewTurnSuccess
 }

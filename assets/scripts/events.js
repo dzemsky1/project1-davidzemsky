@@ -41,6 +41,24 @@ const onNewGame = function (event) {
     .catch(ui.error)
 }
 
+const onNewTurn = function (event) {
+  if (event.target !== event.currentTarget) {
+    const clickedItem = event.target.id
+    alert('Hello ' + clickedItem)
+  }
+  event.stopPropagation();
+}
+
+
+
+  // const gameboard
+  //const X
+  //const gamecells = []
+  //if user clicks on gameboard space, and space is empty{
+    //add a token (X?) to that space (use data-cell-index).html(X)
+
+
+
 
 
 
@@ -48,5 +66,6 @@ module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
-  onNewGame
+  onNewGame,
+  onNewTurn
 }
