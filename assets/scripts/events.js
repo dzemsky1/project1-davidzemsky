@@ -42,14 +42,22 @@ const onNewGame = function (event) {
 }
 
 const onNewTurn = function (event) {
-    // const clickedItem = event.target.id
-    // alert('Hello ' + clickedItem) //returns an alert stating which div I clicked on
     const cell = event.target.id
-    alert('Hello ' + cell)
-    $('#cell0').append('test 1')
-    $(cell).append('test 2')
+    const value = ($('#' + cell).text())
+    if (value === "X") {
+      $('#response-message').text('Cant do that!')
+    } else {
+      $('#' + cell).text('X')
+      $('#response-message').text('Nice Move!')
+    }
 }
+    //if (text value of cell === "")
+      //$('#' + cell).text('X')
+    //else (message user illegal move)
 
+
+
+//$(event.target).data('cell-index')
 
   // const gameboard
   //const X
