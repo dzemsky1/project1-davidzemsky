@@ -36,7 +36,8 @@ const onNewGameSuccess = function () {
 }
 
 const onNewTurnSuccess = function () {
-  $('#test').text('hey!')
+  alert('Hello ' + clickedItem)
+  clickedItem.append('X')
 }
 
 module.exports = {
