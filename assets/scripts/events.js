@@ -42,13 +42,13 @@ const onNewGame = function (event) {
 }
 
 const onNewTurn = function (event) {
-  if (event.target !== event.currentTarget) {
-    const clickedItem = event.target.id
-    alert('Hello ' + clickedItem)
-  }
-  event.stopPropagation();
+    // const clickedItem = event.target.id
+    // alert('Hello ' + clickedItem) //returns an alert stating which div I clicked on
+    const cell = event.target.id
+    alert('Hello ' + cell)
+    $('#cell0').append('test 1')
+    $(cell).append('test 2')
 }
-
 
 
   // const gameboard
