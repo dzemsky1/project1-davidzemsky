@@ -30,11 +30,13 @@ const onSignOutSuccess = function () {
   store.user = null
 }
 
-const onNewGameSuccess = function () {
+const onNewGameSuccess = function (response) {
+  store.game = response.game
   $('#response-message').text('Let the games begin!')
   $('#game-board').show()
 }
 
+//store.game.id ,
 const onNewTurnSuccess = function () {
   alert('Hello ' + clickedItem)
   clickedItem.append('X')

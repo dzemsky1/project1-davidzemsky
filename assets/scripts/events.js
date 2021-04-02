@@ -41,15 +41,22 @@ const onNewGame = function (event) {
     .catch(ui.error)
 }
 
+let turnCounter = 2
+
 const onNewTurn = function (event) {
-    const cell = event.target.id
-    const value = ($('#' + cell).text())
-    if (value === "X") {
-      $('#response-message').text('Cant do that!')
-    } else {
-      $('#' + cell).text('X')
-      $('#response-message').text('Nice Move!')
-    }
+  const cell = event.target.id
+  const value = ($('#' + cell).text())
+  if (value === "X" || value === "O") {
+    $('#response-message').text('Cant do that!')
+  } else if (turnCounter % 2 === 0) {
+    $('#' + cell).text('X')
+    $('#response-message').text('X is doin it!')
+    turnCounter++
+  } else {
+    $('#' + cell).text('O')
+    $('#response-message').text('O coming back strong!')
+    turnCounter++
+  }
 }
     //if (text value of cell === "")
       //$('#' + cell).text('X')
