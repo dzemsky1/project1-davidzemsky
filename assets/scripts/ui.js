@@ -34,12 +34,13 @@ const onNewGameSuccess = function (response) {
   store.game = response.game
   $('#response-message').text('Let the games begin!')
   $('#game-board').show()
+  // $('.box').text('')
+  // $('.box').css('background', 'white')
 }
 
 //store.game.id ,
-const onNewTurnSuccess = function () {
-  alert('Hello ' + clickedItem)
-  clickedItem.append('X')
+const onUpdateSuccess = function () {
+  console.log('update succesful!')
 }
 
 module.exports = {
@@ -48,5 +49,5 @@ module.exports = {
   onSignInSuccess,
   onSignOutSuccess,
   onNewGameSuccess,
-  onNewTurnSuccess
+  onUpdateSuccess
 }

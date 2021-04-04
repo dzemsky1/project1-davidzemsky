@@ -44,20 +44,30 @@ const onNewGame = function (event) {
 let turnCounter = 2
 
 const onNewTurn = function (event) {
-  const cell = event.target.id
-  const value = ($('#' + cell).text())
-  if (value === "X" || value === "O") {
+  const cell = $(event.target)
+  const cellData = $(event.target).data('cell-index')
+  const value = cell.text()
+  const formData = getFormFields(cellData)
+  // const id = formData.game.id
+  // console.log('this is the ID,' + id)
+  if (value === 'X' || value === 'O') {
     $('#response-message').text('Cant do that!')
   } else if (turnCounter % 2 === 0) {
-    $('#' + cell).text('X')
-    $('#response-message').text('X is doin it!')
+    cell.css('background', 'transparent').text('X')
+    $('#response-message').text('X is doin it! Lets see what O can do')
     turnCounter++
   } else {
-    $('#' + cell).text('O')
-    $('#response-message').text('O coming back strong!')
+    cell.css('background', 'transparent').text('O')
+    $('#response-message').text('O coming back strong! How will X respond')
     turnCounter++
   }
+  api.updateGame(id, formData)
+     .then(ui.onUpdateSuccess)
+     .catch(ui.error)
 }
+
+
+
     //if (text value of cell === "")
       //$('#' + cell).text('X')
     //else (message user illegal move)

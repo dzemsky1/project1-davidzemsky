@@ -4,16 +4,46 @@ $alt-color: $cyan;
 $body-bg-color: $gray-200;
 $font-color: $light;
 
+.container {
+  height: 100vh;
+}
 
 .box {
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
   align-items: center;
-  background-color: $secondary;
-  border: 1px solid $white;
-  color: $font-color;
+  color: black;
   display: flex;
-  height: 80px;
+  height: 100px;
   justify-content: center;
+  &:nth-child(3n) {
+    border-right: 0;
+    }
+
+  &:nth-last-child(-1n + 3) {
+  }
+  min-height: calc(100vh / 3);
+  background-color: white;
+  color:white;
+  font-size: 15vh;
+  text-shadow: 3px 3px rgba(0, 0, 0, .25);
+  &:hover {
+    background-color: lightSkyBlue;
+    }
 }
+
+.row {
+  margin: auto;
+  max-height: calc(100vh - 74);
+  max-width: calc(100vh - 75);
+
+  background: url('https://www.treehugger.com/thmb/7KODEiuRvG7GqhcFKiKUKQRX7Ew=/2124x1195/smart/filters:no_upscale()/GettyImages-657928944-42d06dbb655341b1aec4d99dee00bc2b.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
 
 .alt-color {
   background-color: $alt-color;
