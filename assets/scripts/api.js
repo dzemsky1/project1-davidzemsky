@@ -40,16 +40,27 @@ const newGame = function (data) {
   })
 }
 
-const updateGame = function (data) {
+const updateGame = function (moveData, cellData) {
+  console.log('data is ', moveData, cellData)
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/games/' + store.game.id,
-    data: data,
+    url: config.apiUrl + '/games/' + store.game._id,
+    data: {
+      game: {
+        cell: {
+          index: cellData,
+          value: moveData
+        },
+        over: false
+      }
+    },
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
   })
 }
+
+
 
 module.exports = {
   signUp,

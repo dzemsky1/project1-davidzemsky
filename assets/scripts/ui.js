@@ -33,6 +33,7 @@ const onNewGameSuccess = function (response) {
   store.game = response.game
   $('#response-message').text('Let the games begin!')
   $('#game-board').show()
+  console.log(store.game._id)
   // $('.box').text('')
   // $('.box').css('background', 'white')
 }
