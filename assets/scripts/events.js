@@ -65,6 +65,76 @@ const onNewTurn = function (event) {
 }
 
 
+const checkForWinner = function () {
+  const cell0 = $('#cell0').text()
+  const cell1 = $('#cell1').text()
+  const cell2 = $('#cell2').text()
+  const cell3 = $('#cell3').text()
+  const cell4 = $('#cell4').text()
+  const cell5 = $('#cell5').text()
+  const cell6 = $('#cell6').text()
+  const cell7 = $('#cell7').text()
+  const cell8 = $('#cell8').text()
+  // console.log($('#cell0').text(), $('#cell1').text(), $('#cell2').text())
+  if (cell0 && cell1 && cell2 === 'X') {
+    $('#response-message').text('We have a winner!!')
+  } else if (cell0 && cell1 && cell2 === 'O') {
+    $('#response-message').text('We have a winner!!')
+  } else if (cell3 && cell4 && cell5 === 'X') {
+    $('#response-message').text('We have a winner!!')
+  } else if (cell3 && cell4 && cell5 === 'O') {
+    $('#response-message').text('We have a winner!!')
+  } else if (cell6 && cell7 && cell8 === 'X') {
+    $('#response-message').text('We have a winner!!')
+  } else if (cell6 && cell7 && cell8 === 'O') {
+    $('#response-message').text('We have a winner!!')
+  } else if (cell0 && cell3 && cell6 === 'X') {
+    $('#response-message').text('We have a winner!!')
+  } else if (cell0 && cell3 && cell6 === 'O') {
+    $('#response-message').text('We have a winner!!')
+  } else if (cell1 && cell4 && cell7 === 'X') {
+    $('#response-message').text('We have a winner!!')
+  } else if (cell1 && cell4 && cell7 === 'O') {
+    $('#response-message').text('We have a winner!!')
+  } else if (cell2 && cell5 && cell8 === 'X') {
+    $('#response-message').text('We have a winner!!')
+  } else if (cell2 && cell5 && cell8 === 'O') {
+    $('#response-message').text('We have a winner!!')
+  } else if (cell0 && cell4 && cell8 === 'X') {
+    $('#response-message').text('We have a winner!!')
+  } else if (cell0 && cell4 && cell8 === 'O') {
+    $('#response-message').text('We have a winner!!')
+  } else if (cell2 && cell4 && cell6 === 'X') {
+    $('#response-message').text('We have a winner!!')
+  } else if (cell2 && cell4 && cell6 === 'O') {
+    $('#response-message').text('We have a winner!!')
+  }
+}
+
+//are three divs in a row 'X' or 'O'
+//break each thing into columns and rows?
+
+// console.log()
+
+
+// const checkForWinner = function () {
+//   if ($('.row-1').each(function (index)) === 'X' 'O' {
+//     console.log($(this).text())
+// })
+// }
+
+// if (cell 0, 1, 2 === x, or 3, 4, 5 === x, 6, 7, 8 === x)
+// after click, value.cell.text
+// if 3 in a row in array...
+
+// $( ".row-1" ).each(function(index) {
+//   console.log($(this).text())
+// }
+
+
+
+
+
 
     //if (text value of cell === "")
       //$('#' + cell).text('X')
@@ -90,5 +160,6 @@ module.exports = {
   onSignIn,
   onSignOut,
   onNewGame,
-  onNewTurn
+  onNewTurn,
+  checkForWinner
 }
