@@ -8,7 +8,7 @@ const onSignUpSuccess = function () {
 }
 
 const error = function () {
-  $('#response-message').text('Error! Error! What is wrong with you!!')
+  $('#response-message').text('Error! Error!')
 }
 
 const onSignInSuccess = function (response) {
@@ -42,6 +42,8 @@ const onNewGameSuccess = function (response) {
 const onUpdateSuccess = function (response) {
   console.log('update succesful!')
 }
+
+
 
 module.exports = {
   onSignUpSuccess,

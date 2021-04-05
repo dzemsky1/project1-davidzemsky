@@ -42,12 +42,16 @@ const onNewGame = function (event) {
 }
 
 let turnCounter = 2
+let winner = false
+
+
 
 const onNewTurn = function (event) {
   const cell = $(event.target)
   const cellData = $(event.target).data('cell-index')
   const value = cell.text()
-  if (value === 'X' || value === 'O') {
+  console.log(winner)
+  if (value === 'X' || value === 'O' || $('#response-message').text() === 'winner!') {
     $('#response-message').text('Cant do that!')
   } else if (turnCounter % 2 === 0) {
     cell.css('background', 'transparent').text('X')
@@ -62,6 +66,7 @@ const onNewTurn = function (event) {
   api.updateGame(moveData, cellData)
      .then(ui.onUpdateSuccess)
      .catch(ui.error)
+
 }
 
 
@@ -75,80 +80,42 @@ const checkForWinner = function () {
   const cell6 = $('#cell6').text()
   const cell7 = $('#cell7').text()
   const cell8 = $('#cell8').text()
-  // console.log($('#cell0').text(), $('#cell1').text(), $('#cell2').text())
-  if (cell0 && cell1 && cell2 === 'X') {
-    $('#response-message').text('We have a winner!!')
-  } else if (cell0 && cell1 && cell2 === 'O') {
-    $('#response-message').text('We have a winner!!')
-  } else if (cell3 && cell4 && cell5 === 'X') {
-    $('#response-message').text('We have a winner!!')
-  } else if (cell3 && cell4 && cell5 === 'O') {
-    $('#response-message').text('We have a winner!!')
-  } else if (cell6 && cell7 && cell8 === 'X') {
-    $('#response-message').text('We have a winner!!')
-  } else if (cell6 && cell7 && cell8 === 'O') {
-    $('#response-message').text('We have a winner!!')
-  } else if (cell0 && cell3 && cell6 === 'X') {
-    $('#response-message').text('We have a winner!!')
-  } else if (cell0 && cell3 && cell6 === 'O') {
-    $('#response-message').text('We have a winner!!')
-  } else if (cell1 && cell4 && cell7 === 'X') {
-    $('#response-message').text('We have a winner!!')
-  } else if (cell1 && cell4 && cell7 === 'O') {
-    $('#response-message').text('We have a winner!!')
-  } else if (cell2 && cell5 && cell8 === 'X') {
-    $('#response-message').text('We have a winner!!')
-  } else if (cell2 && cell5 && cell8 === 'O') {
-    $('#response-message').text('We have a winner!!')
-  } else if (cell0 && cell4 && cell8 === 'X') {
-    $('#response-message').text('We have a winner!!')
-  } else if (cell0 && cell4 && cell8 === 'O') {
-    $('#response-message').text('We have a winner!!')
-  } else if (cell2 && cell4 && cell6 === 'X') {
-    $('#response-message').text('We have a winner!!')
-  } else if (cell2 && cell4 && cell6 === 'O') {
-    $('#response-message').text('We have a winner!!')
+  if (cell0 === 'X' && cell1 === 'X' && cell2 === 'X') {
+    $('#response-message').text('winner!')
+    console.log(winner)
+  } else if (cell0 === 'O' && cell1 === 'O' && cell2 === 'O') {
+    $('#response-message').text('winner!')
+  } else if (cell3 === 'X' && cell4 === 'X' && cell5 === 'X') {
+    $('#response-message').text('winner!')
+  } else if (cell3 === 'O' && cell4 === 'O' && cell5 === 'O') {
+    $('#response-message').text('winner!')
+  } else if (cell6 === 'X' && cell7 === 'X' && cell8 === 'X') {
+    $('#response-message').text('winner!')
+  } else if (cell6 === 'O' && cell7 === 'O' && cell8 === 'O') {
+    $('#response-message').text('winner!')
+  } else if (cell0 === 'X' && cell3 === 'X' && cell6 === 'X') {
+    $('#response-message').text('winner!')
+  } else if (cell0 === 'O' && cell3 === 'O' && cell6 === 'O') {
+     $('#response-message').text('winner!')
+
+  } else if (cell1 === 'X' && cell4 === 'X' && cell7 === 'X') {
+    $('#response-message').text('winner!')
+  } else if (cell1 === 'O' && cell4 === 'O' && cell7 === 'O') {
+    $('#response-message').text('winner!')
+  } else if (cell2 === 'X' && cell5 === 'X' && cell8 === 'X') {
+    $('#response-message').text('winner!')
+  } else if (cell2 === 'O' && cell5 === 'O' && cell8 === 'O') {
+    $('#response-message').text('winner!')
+  } else if (cell0 === 'X' && cell4 === 'X' && cell8 === 'X') {
+    $('#response-message').text('winner!')
+  } else if (cell0 === 'O' && cell4 === 'O' && cell8 === 'O') {
+    $('#response-message').text('winner!')
+  } else if (cell2 === 'X' && cell4 === 'X' && cell6 === 'X') {
+    $('#response-message').text('winner!')
+  } else if (cell2 === 'O' && cell4 === 'O' && cell6 === 'O') {
+    $('#response-message').text('winner!')
   }
 }
-
-//are three divs in a row 'X' or 'O'
-//break each thing into columns and rows?
-
-// console.log()
-
-
-// const checkForWinner = function () {
-//   if ($('.row-1').each(function (index)) === 'X' 'O' {
-//     console.log($(this).text())
-// })
-// }
-
-// if (cell 0, 1, 2 === x, or 3, 4, 5 === x, 6, 7, 8 === x)
-// after click, value.cell.text
-// if 3 in a row in array...
-
-// $( ".row-1" ).each(function(index) {
-//   console.log($(this).text())
-// }
-
-
-
-
-
-
-    //if (text value of cell === "")
-      //$('#' + cell).text('X')
-    //else (message user illegal move)
-
-
-
-//$(event.target).data('cell-index')
-
-  // const gameboard
-  //const X
-  //const gamecells = []
-  //if user clicks on gameboard space, and space is empty{
-    //add a token (X?) to that space (use data-cell-index).html(X)
 
 
 
