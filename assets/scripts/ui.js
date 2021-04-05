@@ -17,15 +17,14 @@ const onSignInSuccess = function (response) {
   $('#sign-in').trigger('reset')
   $('#sign-in').hide()
   $('#sign-up').hide()
-  $('#sign-out').show()
-  $('#new-game').show()
+  $('#signed-in-options').show()
 }
 
 const onSignOutSuccess = function () {
   $('#response-message').text('You signed out!')
   $('#sign-in').show()
   $('#sign-up').show()
-  $('#sign-out').hide()
+  $('#signed-in-options').hide()
   $('#game-board').hide()
   store.user = null
 }
@@ -39,7 +38,7 @@ const onNewGameSuccess = function (response) {
 }
 
 //store.game.id ,
-const onUpdateSuccess = function () {
+const onUpdateSuccess = function (response) {
   console.log('update succesful!')
 }
 

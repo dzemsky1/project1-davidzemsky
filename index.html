@@ -14,6 +14,7 @@
 
     <body>
       <h1>Tickity Tackity Toe</h1>
+
       <form id="sign-up">
         <input name="credentials[email]" type="email" placeholder="email">
         <input name="credentials[password]" type="password" placeholder="password">
@@ -21,16 +22,23 @@
         <input type="submit" value="Sign Up"/>
       </form>
 
+      <hr class="solid">
+      <hr class="dashed">
+
       <form id="sign-in">
         <input name="credentials[email]" type="email" placeholder="email">
         <input name="credentials[password]" type="password" placeholder="password">
         <input type="submit" value="Sign In"/>
       </form>
+    </div>
+
+
       <p id="response-message"></p>
 
       <div id="signed-in-options">
-      <button id="sign-out"> Sign Out </button>
       <button id="new-game"> New Game </button>
+      <button id="restart"> Restart </button>
+      <button id="sign-out"> Sign Out </button>
       </div>
 
       <div id="game-board" class="container">
@@ -47,7 +55,7 @@
           </div>
         </div>
 
-        <button id="Restart"
+
 
     </body>
 </html>

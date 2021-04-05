@@ -3,6 +3,57 @@
 $alt-color: $cyan;
 $body-bg-color: $gray-200;
 $font-color: $light;
+$bg-color: #f2f2f2;
+
+
+#signed-in-options {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+body {
+  background: $bg-color;
+  padding: 48px;
+}
+
+hr.solid {
+  border-top: 0px solid #6D7587;
+}
+
+
+button {
+  font-size: 14px;
+  border: none;
+  margin-right: 24px;
+  margin-bottom: 40px;
+  padding: 10px 30px;
+  border-radius: 40px;
+  color: #6D7587;
+  background-color: $bg-color;
+  box-shadow: 7px 7px 15px rgba(55, 84, 170, .15),
+             -7px -7px 20px rgba(255, 255, 255, 1),
+             inset 0px 0px 4px rgba(255, 255, 255, .2),
+             inset 7px 7px 15px rgba(55, 84, 170, 0),
+             inset -7px -7px 20px rgba(255, 255, 255, 0),
+             0px 0px 4px rgba(255, 255, 255, 0)
+}
+
+input {
+  font-size: 14px;
+  border: none;
+  margin: 20px;
+  padding: 10px 30px;
+  border-radius: 40px;
+  color: #6D7587;
+  background-color: $bg-color;
+  box-shadow: 7px 7px 15px rgba(55, 84, 170, .15),
+             -7px -7px 20px rgba(255, 255, 255, 1),
+             inset 0px 0px 4px rgba(255, 255, 255, .2),
+             inset 7px 7px 15px rgba(55, 84, 170, 0),
+             inset -7px -7px 20px rgba(255, 255, 255, 0),
+             0px 0px 4px rgba(255, 255, 255, 0)
+}
 
 .container {
   height: 100vh;

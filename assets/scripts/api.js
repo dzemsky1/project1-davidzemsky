@@ -40,11 +40,11 @@ const newGame = function (data) {
   })
 }
 
-const updateGame = function (id, formData) {
+const updateGame = function (data) {
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/games/' + id,
-    data: formData,
+    url: config.apiUrl + '/games/' + store.game.id,
+    data: data,
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }

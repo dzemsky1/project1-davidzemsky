@@ -47,9 +47,6 @@ const onNewTurn = function (event) {
   const cell = $(event.target)
   const cellData = $(event.target).data('cell-index')
   const value = cell.text()
-  const formData = getFormFields(cellData)
-  // const id = formData.game.id
-  // console.log('this is the ID,' + id)
   if (value === 'X' || value === 'O') {
     $('#response-message').text('Cant do that!')
   } else if (turnCounter % 2 === 0) {
@@ -61,7 +58,8 @@ const onNewTurn = function (event) {
     $('#response-message').text('O coming back strong! How will X respond')
     turnCounter++
   }
-  api.updateGame(id, formData)
+  const moveData = $(event.target).text()
+  api.updateGame(moveData, cellData)
      .then(ui.onUpdateSuccess)
      .catch(ui.error)
 }
