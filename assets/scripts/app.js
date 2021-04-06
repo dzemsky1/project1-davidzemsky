@@ -17,5 +17,6 @@ $(() => {
   $('#game-board').on('click', authEvents.onNewTurn)
   $('#game-board').on('click', authEvents.checkForWinner)
   $('#view-games').on('click', authEvents.onViewGames)
+  $('#addMe').on('click', authEvents.onAdd)
     //, false?)
 })

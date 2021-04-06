@@ -23,8 +23,8 @@ h1 {
 
 p {
   color: #6D7587;
-  font-weight: bold;
-  font-size: 18px;
+  font-weight:500;
+  font-size: 16px;
   display: inline;
   margin: auto;
 }
@@ -108,6 +108,7 @@ input {
 }
 
 
+
 #sign-in {
   display: block;
   justify-content: center;
@@ -182,6 +183,17 @@ input {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+#X-score {
+  display: block;
+}
+#O-score {
+  display: block;
+}
+
+#response-message {
+  display: block;
 }
 
 #game-options {

@@ -1,5 +1,9 @@
 'use strict'
 
+let xCounter = 0
+let oCounter = 0
+
+
 const store = require('./store')
 
 const onSignUpSuccess = function () {
@@ -37,6 +41,7 @@ const onSignOutSuccess = function () {
 
 const onNewGameSuccess = function (response) {
   store.game = response.game
+  $('#response-message').show()
   $('#response-message').text('Let the games begin!')
   $('#game-board').show()
   $('#game-options').show()
@@ -80,16 +85,39 @@ const onUpdateWinner = function () {
 }
 
 
-const onWinnerSuccess = function () {
+// let counter = 0
+//
+// const onAdd = function () {
+//   counter++
+//   $('#theCount').text(counter)
+// }
+
+const onOSuccess = function () {
   if ($('#winner-message').text() === 'gameover') {
     console.log('no more moves')
   }
   else if ($('#winner-message').text() === 'who will win?') {
     $('#winner-message').text('winner!')
-    $('#score').append('X')
+    oCounter++
+    $('#O-score').text('O: ' + oCounter)
   } else {
     $('#winner-message').text('game over')
   }
+    $('#response-message').hide()
+}
+
+const onXSuccess = function () {
+  if ($('#winner-message').text() === 'gameover') {
+    console.log('no more moves')
+  }
+  else if ($('#winner-message').text() === 'who will win?') {
+    $('#winner-message').text('winner!')
+    xCounter++
+    $('#X-score').text('X: ' + xCounter)
+  } else {
+    $('#winner-message').text('game over')
+  }
+    $('#response-message').hide()
 }
 
 
@@ -101,7 +129,8 @@ module.exports = {
   onSignOutSuccess,
   onNewGameSuccess,
   onUpdateSuccess,
-  onWinnerSuccess,
+  onOSuccess,
+  onXSuccess,
   onUpdateWinner,
   onViewGamesSuccess
 }
