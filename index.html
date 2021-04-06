@@ -15,30 +15,38 @@
     <body>
       <h1>Tickity Tackity Toe</h1>
 
-      <form id="sign-up">
+
+
+      <form id="sign-up-form">
         <input name="credentials[email]" type="email" placeholder="email">
         <input name="credentials[password]" type="password" placeholder="password">
         <input name="credentials[password_confirmation]" type="password" placeholder="confirm password">
-        <input type="submit" value="Sign Up"/>
+        <button id="sign-up" type="submit" class="btn btn-primary">Sign Up</button>
+        <!-- <input id='submit' type="submit" value="Sign Up"/> -->
       </form>
 
-      <hr class="solid">
       <hr class="dashed">
 
-      <form id="sign-in">
+      <!-- <button id="already-member" type="button" class="btn btn-link">Already Registered? Sign In</button> -->
+
+
+
+
+
+      <form id="sign-in-form">
         <input name="credentials[email]" type="email" placeholder="email">
         <input name="credentials[password]" type="password" placeholder="password">
-        <input type="submit" value="Sign In"/>
+        <button id="sign-in" type="submit" class="btn btn-primary">Sign In</button>
+        <!-- <input id='submit' type="submit" value="Sign In"/> -->
       </form>
-    </div>
 
 
-      <p id="response-message"></p>
+
 
       <div id="signed-in-options">
-      <button id="new-game"> New Game </button>
+        <button id="new-game" type="button" class="btn btn-primary">New Game</button>
       <!-- Button trigger modal -->
-      <button id="view-games" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      <button id="view-games" type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
         Games Played
       </button>
 
@@ -47,7 +55,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Games Played</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -57,20 +65,22 @@
 
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
       </div>
       <!-- <button id="restart"> Restart </button> -->
-      <button id="sign-out"> Sign Out </button>
+      <button id="sign-out" type="button" class="btn btn-secondary">Sign Out</button>
       </div>
 
+      <div id='game-options'>
+        <p id="winner-message"></p>
+        <p id="score"> Wins for X: </p>
+        <p id="response-message"></p>
+      </div>
 
       <div id="game-board" class="container">
-            <p id="winner-message"></p>
-            <p id="score"> Wins for X: </p>
           <div class="row h-100">
             <div id="cell0" data-cell-index='0' class="col-4 box"> </div>
             <div id="cell1" data-cell-index='1' class="col-4 box"> </div>
@@ -85,19 +95,22 @@
         </div>
 
 
-        <!-- <div id="alternate-board" class="container">
-              <div data-cell-index='0' class="col-4 box row-1 column-1 diagonal-1"> </div>
-              <div data-cell-index='1' class="col-4 box row-1 column-2"> </div>
-              <div data-cell-index='2' class="col-4 box row-1 column-3 diagonal-2"> </div>
-              <div data-cell-index='3' class="col-4 box row-2 column-1"> </div>
-              <div data-cell-index='4' class="col-4 box row-2 column-2 diagnoal-1 diagonal 2"> </div>
-              <div data-cell-index='5' class="col-4 box row-2 column-3"> </div>
-              <div data-cell-index='6' class="col-4 box row-3 column-1 diagnoal-2"> </div>
-              <div data-cell-index='7' class="col-4 box row-3 column-2"> </div>
-              <div data-cell-index='8' class="col-4 box row-3 column-3 diagnoal-2"> </div>
-            </div>
-          </div> -->
 
+
+
+        <div class="position-fixed bottom-0 right-0 p-3" style="z-index: 5; right: 0; bottom: 0;">
+          <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
+            <div class="toast-header">
+              <strong class="mr-auto">Success</strong>
+              <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="toast-body">
+              You're signed up and ready to go!
+            </div>
+          </div>
+        </div>
 
 
     </body>

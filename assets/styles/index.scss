@@ -12,6 +12,23 @@ $bg-color: #f2f2f2;
 }
 
 
+#game-board {
+  margin-top: 48px;
+}
+
+
+h1 {
+  margin-bottom: 60px;
+}
+
+p {
+  color: #6D7587;
+  font-weight: bold;
+  font-size: 18px;
+  display: inline;
+  margin: auto;
+}
+
 body {
   background: $bg-color;
   padding: 48px;
@@ -40,22 +57,95 @@ button {
 }
 
 input {
-  font-size: 14px;
-  border: none;
-  margin: 20px;
-  padding: 10px 30px;
+        display:block;
+        margin: auto;
+        margin-bottom: 24px;
+        width: 350px;
+        height: 40px;
+        padding-left: 25px;
+        font-size: 13px;
+        letter-spacing: .15px;
+        border: none;
+        outline: none;
+
+        font-family: 'Montserrat', sans-serif;
+		background-color: $bg-color;
+		transition: .25s ease;
+		border-radius: 8px;
+
+		box-shadow:
+			inset 2px 2px 4px rgba(0, 0, 0, .20),
+			inset -2px -2px 4px $white;
+
+		&:focus{
+			box-shadow:
+				inset 4px 4px 4px $bg-color,
+				inset -4px -4px 4px $white;
+		}
+}
+
+#sign-up {
+  display: block;
+  justify-content: center;
+  margin: auto;
+}
+
+#liveToast {
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  min-width: 15rem;
+}
+
+#already-member {
+  display: block;
+  justify-content: center;
+  margin: auto;
+  box-shadow: none;
+  margin-top: 64px;
+}
+
+
+#sign-in {
+  display: block;
+  justify-content: center;
+  margin: auto;
+  padding-left: 150px;
+  padding-right: 150px;
   border-radius: 40px;
-  color: #6D7587;
-  background-color: $bg-color;
-  box-shadow: 7px 7px 15px rgba(55, 84, 170, .15),
-             -7px -7px 20px rgba(255, 255, 255, 1),
-             inset 0px 0px 4px rgba(255, 255, 255, .2),
-             inset 7px 7px 15px rgba(55, 84, 170, 0),
-             inset -7px -7px 20px rgba(255, 255, 255, 0),
-             0px 0px 4px rgba(255, 255, 255, 0)
+}
+
+#sign-up {
+  padding-left: 150px;
+  padding-right: 150px;
+  border-radius: 40px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+#submit {
+  width: 180px;
+     height: 50px;
+     border-radius: 25px;
+     margin-top: 50px;
+     font-weight: 700;
+     font-size: 14px;
+     letter-spacing: 1.15px;
+
+ 	background-color: $purple;
+ 	color: $white;
+ 	box-shadow:
+ 		8px 8px 16px rgba (0,0,0,.20),
+ 		-8px -8px 16px $white;
+
+ 	border: none;
+     outline: none;
 }
 
 .container {
+  margin-top: 40px;
   height: 100vh;
 }
 
@@ -93,6 +183,11 @@ input {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+#game-options {
+  justify-content: flex-end;
+}
+
 
 
 

@@ -4,7 +4,8 @@ const store = require('./store')
 
 const onSignUpSuccess = function () {
   $('#response-message').text('Thanks for signing up!')
-  $('#sign-up').trigger('reset')
+  $('#sign-up-form').trigger('reset')
+  $('.toast').toast('show')
 }
 
 const error = function () {
@@ -13,30 +14,38 @@ const error = function () {
 
 const onSignInSuccess = function (response) {
   store.user = response.user
-  $('#response-message').text(response.user.email + ' is Signed In and Ready to Go!')
+  $('#response-message').text('')
   $('#sign-in').trigger('reset')
-  $('#sign-in').hide()
-  $('#sign-up').hide()
+  $('#sign-in-form').hide()
+  $('#sign-up-form').hide()
   $('#signed-in-options').show()
+  $('.toast').toast('show')
+  $('.toast-body').text('Youre signed in!')
 }
 
 const onSignOutSuccess = function () {
   $('#response-message').text('You signed out!')
-  $('#sign-in').show()
-  $('#sign-up').show()
+  $('#sign-in-form').show()
+  $('#sign-up-form').show()
   $('#signed-in-options').hide()
+  $('#game-options').hide()
   $('#game-board').hide()
   store.user = null
+  $('.toast').toast('show')
+  $('.toast-body').text('Farewell!')
 }
 
 const onNewGameSuccess = function (response) {
   store.game = response.game
   $('#response-message').text('Let the games begin!')
   $('#game-board').show()
+  $('#game-options').show()
   $('.box').text('')
   $('.box').removeAttr('background')
   $('.box').css('background-color', 'white')
   $('#winner-message').text('who will win?')
+  $('.toast').toast('show')
+  $('.toast-body').text('Get ready to play!')
   // $('.box').css('hover', 'background-color: lightSkyBlue')
 }
 
