@@ -41,7 +41,6 @@ const newGame = function (data) {
 }
 
 const updateGame = function (moveData, cellData) {
-  console.log('data is ', moveData, cellData)
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/games/' + store.game._id,

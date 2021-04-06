@@ -36,16 +36,30 @@ const onNewGameSuccess = function (response) {
   $('.box').text('')
   $('.box').removeAttr('background')
   $('.box').css('background-color', 'white')
+  $('#winner-message').text('who will win?')
   // $('.box').css('hover', 'background-color: lightSkyBlue')
 }
 
 //store.game.id ,
-const onUpdateSuccess = function (response) {
-  console.log('update succesful!')
+const onUpdateSuccess = function () {
+  console.log('keep playin')
 }
 
-const onCheckForWinner = function () {
-  $('#winner-message').text('winner!')
+const onUpdateWinner = function () {
+  console.log('we have a win win')
+}
+
+
+const onWinnerSuccess = function () {
+  if ($('#winner-message').text() === 'gameover') {
+    console.log('no more moves')
+  }
+  else if ($('#winner-message').text() === 'who will win?') {
+    $('#winner-message').text('winner!')
+    $('#score').append('X')
+  } else {
+    $('#winner-message').text('game over')
+  }
 }
 
 
@@ -57,5 +71,6 @@ module.exports = {
   onSignOutSuccess,
   onNewGameSuccess,
   onUpdateSuccess,
-  onCheckForWinner
+  onWinnerSuccess,
+  onUpdateWinner
 }
