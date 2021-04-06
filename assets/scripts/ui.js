@@ -45,6 +45,27 @@ const onUpdateSuccess = function () {
   console.log('keep playin')
 }
 
+const onViewGamesSuccess = function (response) {
+  store.game = response.games
+  const txt = store.game.length
+
+  document.getElementById('demo').innerHTML = txt
+  console.log('here is the game! Its working!')
+  console.log(store.game)
+}
+
+//document.getElementById("demo").innerHTML =
+// person.name + "," + person.age + "," + person.city;
+//
+// var x, txt = "";
+// var person = {name:"John", age:30, city:"New York"};
+//
+// for (x in person) {
+// txt += person[x] + " ";
+// };
+
+// document.getElementById("demo").innerHTML = txt;
+
 const onUpdateWinner = function () {
   console.log('we have a win win')
 }
@@ -72,5 +93,6 @@ module.exports = {
   onNewGameSuccess,
   onUpdateSuccess,
   onWinnerSuccess,
-  onUpdateWinner
+  onUpdateWinner,
+  onViewGamesSuccess
 }

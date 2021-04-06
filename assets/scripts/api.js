@@ -40,7 +40,19 @@ const newGame = function (data) {
   })
 }
 
-const updateGame = function (moveData, cellData) {
+
+const viewGames = function (data) {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/games',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
+
+const updateGame = function (moveData, cellData, over) {
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/games/' + store.game._id,
@@ -50,7 +62,7 @@ const updateGame = function (moveData, cellData) {
           index: cellData,
           value: moveData
         },
-        over: false
+        over: over
       }
     },
     headers: {
@@ -66,5 +78,6 @@ module.exports = {
   signIn,
   signOut,
   newGame,
-  updateGame
+  updateGame,
+  viewGames
 }

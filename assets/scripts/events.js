@@ -41,6 +41,16 @@ const onNewGame = function (event) {
     .catch(ui.error)
 }
 
+
+const onViewGames = function () {
+  event.preventDefault()
+  api.viewGames()
+    .then(ui.onViewGamesSuccess)
+    .catch(ui.error)
+}
+
+
+
 let turnCounter = 2
 
 
@@ -57,6 +67,7 @@ const checkForWinner = function () {
   const cell8 = $('#cell8').text()
   if (cell0 === 'X' && cell1 === 'X' && cell2 === 'X') {
     ui.onWinnerSuccess()
+    return true
   } else if (cell0 === 'O' && cell1 === 'O' && cell2 === 'O') {
     ui.onWinnerSuccess()
   } else if (cell3 === 'X' && cell4 === 'X' && cell5 === 'X') {
@@ -130,5 +141,6 @@ module.exports = {
   onSignOut,
   onNewGame,
   onNewTurn,
-  checkForWinner
+  checkForWinner,
+  onViewGames
 }
