@@ -42,16 +42,12 @@ const onNewGame = function (event) {
 }
 
 let turnCounter = 2
-let winner = false
-
-
 
 const onNewTurn = function (event) {
   const cell = $(event.target)
   const cellData = $(event.target).data('cell-index')
   const value = cell.text()
-  console.log(winner)
-  if (value === 'X' || value === 'O' || $('#response-message').text() === 'winner!') {
+  if (value === 'X' || value === 'O' || $('#winner-message').text() === 'winner!') {
     $('#response-message').text('Cant do that!')
   } else if (turnCounter % 2 === 0) {
     cell.css('background', 'transparent').text('X')
@@ -64,11 +60,9 @@ const onNewTurn = function (event) {
   }
   const moveData = $(event.target).text()
   api.updateGame(moveData, cellData)
-     .then(ui.onUpdateSuccess)
-     .catch(ui.error)
-
+    .then(ui.onUpdateSuccess)
+    .catch(ui.error)
 }
-
 
 const checkForWinner = function () {
   const cell0 = $('#cell0').text()
@@ -81,46 +75,39 @@ const checkForWinner = function () {
   const cell7 = $('#cell7').text()
   const cell8 = $('#cell8').text()
   if (cell0 === 'X' && cell1 === 'X' && cell2 === 'X') {
-    $('#response-message').text('winner!')
-    console.log(winner)
+    ui.onCheckForWinner()
   } else if (cell0 === 'O' && cell1 === 'O' && cell2 === 'O') {
-    $('#response-message').text('winner!')
+    ui.onCheckForWinner()
   } else if (cell3 === 'X' && cell4 === 'X' && cell5 === 'X') {
-    $('#response-message').text('winner!')
+    ui.onCheckForWinner()
   } else if (cell3 === 'O' && cell4 === 'O' && cell5 === 'O') {
-    $('#response-message').text('winner!')
+    ui.onCheckForWinner()
   } else if (cell6 === 'X' && cell7 === 'X' && cell8 === 'X') {
-    $('#response-message').text('winner!')
+    ui.onCheckForWinner()
   } else if (cell6 === 'O' && cell7 === 'O' && cell8 === 'O') {
-    $('#response-message').text('winner!')
+    ui.onCheckForWinner()
   } else if (cell0 === 'X' && cell3 === 'X' && cell6 === 'X') {
-    $('#response-message').text('winner!')
+    ui.onCheckForWinner()
   } else if (cell0 === 'O' && cell3 === 'O' && cell6 === 'O') {
-     $('#response-message').text('winner!')
-
+    ui.onCheckForWinner()
   } else if (cell1 === 'X' && cell4 === 'X' && cell7 === 'X') {
-    $('#response-message').text('winner!')
+    ui.onCheckForWinner()
   } else if (cell1 === 'O' && cell4 === 'O' && cell7 === 'O') {
-    $('#response-message').text('winner!')
+    ui.onCheckForWinner()
   } else if (cell2 === 'X' && cell5 === 'X' && cell8 === 'X') {
-    $('#response-message').text('winner!')
+    ui.onCheckForWinner()
   } else if (cell2 === 'O' && cell5 === 'O' && cell8 === 'O') {
-    $('#response-message').text('winner!')
+    ui.onCheckForWinner()
   } else if (cell0 === 'X' && cell4 === 'X' && cell8 === 'X') {
-    $('#response-message').text('winner!')
+    ui.onCheckForWinner()
   } else if (cell0 === 'O' && cell4 === 'O' && cell8 === 'O') {
-    $('#response-message').text('winner!')
+    ui.onCheckForWinner()
   } else if (cell2 === 'X' && cell4 === 'X' && cell6 === 'X') {
-    $('#response-message').text('winner!')
+    ui.onCheckForWinner()
   } else if (cell2 === 'O' && cell4 === 'O' && cell6 === 'O') {
-    $('#response-message').text('winner!')
+    ui.onCheckForWinner()
   }
 }
-
-
-
-
-
 
 module.exports = {
   onSignUp,

@@ -33,14 +33,19 @@ const onNewGameSuccess = function (response) {
   store.game = response.game
   $('#response-message').text('Let the games begin!')
   $('#game-board').show()
-  console.log(store.game._id)
-  // $('.box').text('')
-  // $('.box').css('background', 'white')
+  $('.box').text('')
+  $('.box').removeAttr('background')
+  $('.box').css('background-color', 'white')
+  // $('.box').css('hover', 'background-color: lightSkyBlue')
 }
 
 //store.game.id ,
 const onUpdateSuccess = function (response) {
   console.log('update succesful!')
+}
+
+const onCheckForWinner = function () {
+  $('#winner-message').text('winner!')
 }
 
 
@@ -51,5 +56,6 @@ module.exports = {
   onSignInSuccess,
   onSignOutSuccess,
   onNewGameSuccess,
-  onUpdateSuccess
+  onUpdateSuccess,
+  onCheckForWinner
 }
