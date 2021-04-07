@@ -53,6 +53,7 @@ const onNewGameSuccess = function (response) {
   $('.navbar').show()
   $('#turn').css('background-color', '#007bff')
   $('#winchip').css('background-color', '#f2f2f2')
+  $('#winner-message').css('color', 'black')
   // $('.box').css('hover', 'background-color: lightSkyBlue')
 }
 
@@ -111,6 +112,7 @@ const onOSuccess = function () {
     $('.toast-body').text('O has won!')
     $('#turn').css('background-color', '#f2f2f2')
     $('#winchip').css('background-color', '#007bff')
+    $('#winner-message').css('color', 'white')
 }
 
 const onXSuccess = function () {
@@ -128,6 +130,7 @@ const onXSuccess = function () {
     $('.toast-body').text('X has won!')
     $('#turn').css('background-color', '#f2f2f2')
     $('#winchip').css('background-color', '#007bff')
+    $('#winner-message').css('color', 'white')
 }
 
 
