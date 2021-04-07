@@ -7,6 +7,7 @@ const authEvents = require('./events')
 // require('./example')
 
 $(() => {
+  $('.navbar').hide()
   $('#signed-in-options').hide()
   $('#game-board').hide()
   $('#game-options').hide()

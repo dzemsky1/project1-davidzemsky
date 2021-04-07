@@ -14,6 +14,9 @@ $bg-color: #f2f2f2;
 
 #game-board {
   margin-top: 48px;
+  border-radius: 40px;
+  box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2);
+    // inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
 }
 
 
@@ -22,7 +25,7 @@ h1 {
 }
 
 p {
-  color: #6D7587;
+  color: rgba(0, 0, 0, .8);
   font-weight:500;
   font-size: 16px;
   display: inline;
@@ -84,11 +87,60 @@ input {
 		}
 }
 
-#sign-up {
-  display: block;
-  justify-content: center;
-  margin: auto;
+.navbar {
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 40px;
+  background-color: $bg-color;
 }
+
+.chip{
+  display: inline-block;
+  padding: 0 32px;
+  margin-right: 12px;
+  height: 36px;
+  font-size: 16px;
+  line-height: 36px;
+  border-radius: 25px;
+  color: white;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1);
+  background-color: #f2f2f2;
+}
+
+#turn {
+  background-color: #007bff;
+}
+
+
+
+
+
+// .btn-1 {
+//   background: darken($red, 1.5%);
+//   font-weight: 100;
+//
+//   svg {
+//     height: 45px;
+//     left: 0;
+//     position: absolute;
+//     top: 0;
+//     width: 100%;
+//   }
+//
+
+//
+// .btn-1:hover {
+//   background: rgba($red, 0);
+//   font-weight: 900;
+//   letter-spacing: 1px;
+//
+//   rect {
+//     stroke-width: 5;
+//     stroke-dasharray: 15, 310;
+//     stroke-dashoffset: 48;
+//     transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+//   }
+// }
+
 
 #liveToast {
   background: rgba( 255, 255, 255, 0.25 );
@@ -98,16 +150,6 @@ input {
   border: 1px solid rgba( 255, 255, 255, 0.18 );
   min-width: 15rem;
 }
-
-#already-member {
-  display: block;
-  justify-content: center;
-  margin: auto;
-  box-shadow: none;
-  margin-top: 64px;
-}
-
-
 
 #sign-in {
   display: block;
@@ -119,6 +161,9 @@ input {
 }
 
 #sign-up {
+  display: block;
+  justify-content: center;
+  margin: auto;
   padding-left: 150px;
   padding-right: 150px;
   border-radius: 40px;
@@ -145,14 +190,18 @@ input {
      outline: none;
 }
 
+#footerdiv {
+  height: 250px;
+}
+
 .container {
   margin-top: 40px;
   height: 100vh;
 }
 
 .box {
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;
+  border-right: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
   align-items: center;
   color: black;
   display: flex;
@@ -165,40 +214,36 @@ input {
   &:nth-last-child(-1n + 3) {
   }
   min-height: calc(100vh / 3);
-  background-color: white;
-  color:white;
+  color:rgba(0,123,255,100);
   font-size: 15vh;
-  text-shadow: 3px 3px rgba(0, 0, 0, .25);
+  // text-shadow: 3px 3px rgba(0, 0, 0, .12);
   &:hover {
-    background-color: lightSkyBlue;
+    background-color: rgba(0, 0, 0, .10);
     }
 }
+
+
 
 .row {
   margin: auto;
   max-height: calc(100vh - 74);
   max-width: calc(100vh - 75);
-
-  background: url('https://www.treehugger.com/thmb/7KODEiuRvG7GqhcFKiKUKQRX7Ew=/2124x1195/smart/filters:no_upscale()/GettyImages-657928944-42d06dbb655341b1aec4d99dee00bc2b.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-#X-score {
-  display: block;
-}
-#O-score {
-  display: block;
-}
 
 #response-message {
-  display: block;
+  color: white;
 }
+
+
 
 #game-options {
   justify-content: flex-end;
 }
+
 
 
 

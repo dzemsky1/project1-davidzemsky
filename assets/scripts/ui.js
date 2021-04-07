@@ -41,16 +41,18 @@ const onSignOutSuccess = function () {
 
 const onNewGameSuccess = function (response) {
   store.game = response.game
-  $('#response-message').show()
   $('#response-message').text('Let the games begin!')
   $('#game-board').show()
   $('#game-options').show()
   $('.box').text('')
-  $('.box').removeAttr('background')
-  $('.box').css('background-color', 'white')
+  // $('.box').removeAttr('background')
+  // $('.box').css('background-color', 'white')
   $('#winner-message').text('who will win?')
   $('.toast').toast('show')
   $('.toast-body').text('Get ready to play!')
+  $('.navbar').show()
+  $('#turn').css('background-color', '#007bff')
+  $('#winchip').css('background-color', '#f2f2f2')
   // $('.box').css('hover', 'background-color: lightSkyBlue')
 }
 
@@ -98,12 +100,17 @@ const onOSuccess = function () {
   }
   else if ($('#winner-message').text() === 'who will win?') {
     $('#winner-message').text('winner!')
+    // $('.chip').css('background-color', 'yellow')
     oCounter++
     $('#O-score').text('O: ' + oCounter)
   } else {
     $('#winner-message').text('game over')
+    // $('.chip').css('background-color', 'yellow')
   }
-    $('#response-message').hide()
+    $('.toast').toast('show')
+    $('.toast-body').text('O has won!')
+    $('#turn').css('background-color', '#f2f2f2')
+    $('#winchip').css('background-color', '#007bff')
 }
 
 const onXSuccess = function () {
@@ -117,7 +124,10 @@ const onXSuccess = function () {
   } else {
     $('#winner-message').text('game over')
   }
-    $('#response-message').hide()
+    $('.toast').toast('show')
+    $('.toast-body').text('X has won!')
+    $('#turn').css('background-color', '#f2f2f2')
+    $('#winchip').css('background-color', '#007bff')
 }
 
 
