@@ -42,6 +42,7 @@ const onSignOutSuccess = function () {
 const onNewGameSuccess = function (response) {
   store.game = response.game
   $('#response-message').text('Let the games begin!')
+  $('#response-message').css('color', 'white')
   $('#game-board').show()
   $('#game-options').show()
   $('.box').text('')
@@ -113,6 +114,7 @@ const onOSuccess = function () {
     $('#turn').css('background-color', '#f2f2f2')
     $('#winchip').css('background-color', '#007bff')
     $('#winner-message').css('color', 'white')
+    $('#response-message').css('color', 'black')
 }
 
 const onXSuccess = function () {
@@ -131,6 +133,7 @@ const onXSuccess = function () {
     $('#turn').css('background-color', '#f2f2f2')
     $('#winchip').css('background-color', '#007bff')
     $('#winner-message').css('color', 'white')
+    $('#response-message').css('color', 'black')
 }
 
 
