@@ -7,19 +7,21 @@ let oCounter = 0
 const store = require('./store')
 
 const onSignUpSuccess = function () {
-  $('#response-message').text('Thanks for signing up!')
   $('#sign-up-form').trigger('reset')
   $('.toast').toast('show')
+  $('.toast-body').text('Youre all signed up!')
 }
 
 const error = function () {
-  $('#response-message').text('Error! Error!')
+  $('.toast').toast('show')
+  $('.toast-body').text('Error!')
+
 }
 
 const onSignInSuccess = function (response) {
   store.user = response.user
   $('#response-message').text('')
-  $('#sign-in').trigger('reset')
+  $('#sign-in-form').trigger('reset')
   $('#sign-in-form').hide()
   $('#sign-up-form').hide()
   $('#signed-in-options').show()
@@ -109,8 +111,8 @@ const onOSuccess = function () {
     $('#winner-message').text('game over')
     // $('.chip').css('background-color', 'yellow')
   }
-    $('.toast').toast('show')
-    $('.toast-body').text('O has won!')
+    // $('.toast').toast('show')
+    // $('.toast-body').text('O has won!')
     $('#turn').css('background-color', '#f2f2f2')
     $('#winchip').css('background-color', '#007bff')
     $('#winner-message').css('color', 'white')
@@ -128,8 +130,8 @@ const onXSuccess = function () {
   } else {
     $('#winner-message').text('game over')
   }
-    $('.toast').toast('show')
-    $('.toast-body').text('X has won!')
+    // $('.toast').toast('show')
+    // $('.toast-body').text('X has won!')
     $('#turn').css('background-color', '#f2f2f2')
     $('#winchip').css('background-color', '#007bff')
     $('#winner-message').css('color', 'white')

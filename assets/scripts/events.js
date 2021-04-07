@@ -5,6 +5,8 @@ const api = require('./api')
 const ui = require('./ui')
 const store = require('./store')
 
+let turnCounter = 2
+
 const onSignUp = function (event) {
   event.preventDefault()
   const form = event.target
@@ -34,6 +36,7 @@ const onSignOut = function (event) {
 
 const onNewGame = function (event) {
   event.preventDefault()
+  turnCounter = 2
   const form = event.target
   const data = getFormFields(form)
   api.newGame(data)
@@ -51,7 +54,7 @@ const onViewGames = function () {
 
 
 
-let turnCounter = 2
+
 
 
 
