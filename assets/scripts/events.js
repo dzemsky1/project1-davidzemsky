@@ -68,15 +68,16 @@ const checkForWinner = function () {
   const cell6 = $('#cell6').text()
   const cell7 = $('#cell7').text()
   const cell8 = $('#cell8').text()
-  if (cell0 === 'X' && cell1 === 'X' && cell2 === 'X') {
-    ui.onXSuccess()
-  } else if (cell0 === 'O' && cell1 === 'O' && cell2 === 'O') {
-    ui.onOSuccess()
-  } else if (cell3 === 'X' && cell4 === 'X' && cell5 === 'X') {
-    ui.onXSuccess()
-  } else if (cell3 === 'O' && cell4 === 'O' && cell5 === 'O') {
-    ui.onOSuccess()
-  } else if (cell6 === 'X' && cell7 === 'X' && cell8 === 'X') {
+  if ($('#winner-message').text() !== 'game over') {
+    if (cell0 === 'X' && cell1 === 'X' && cell2 === 'X') {
+      ui.onXSuccess()
+    } else if (cell0 === 'O' && cell1 === 'O' && cell2 === 'O') {
+      ui.onOSuccess()
+    } else if (cell3 === 'X' && cell4 === 'X' && cell5 === 'X') {
+      ui.onXSuccess()
+    } else if (cell3 === 'O' && cell4 === 'O' && cell5 === 'O') {
+      ui.onOSuccess()
+    } else if (cell6 === 'X' && cell7 === 'X' && cell8 === 'X') {
     ui.onXSuccess()
   } else if (cell6 === 'O' && cell7 === 'O' && cell8 === 'O') {
     ui.onOSuccess()
@@ -100,7 +101,11 @@ const checkForWinner = function () {
     ui.onXSuccess()
   } else if (cell2 === 'O' && cell4 === 'O' && cell6 === 'O') {
     ui.onOSuccess()
+  } else if (cell0 !== '' && cell1 !== '' && cell2 !== '' && cell3 !== '' && cell4 !== '' && cell5 !== '' && cell6 !== '' && cell7 !== '' && cell8 !== '') {
+    console.log('tie!')
+    ui.onTieSuccess()
   }
+}
 }
 
 

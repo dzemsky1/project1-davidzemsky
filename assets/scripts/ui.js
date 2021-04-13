@@ -111,8 +111,8 @@ const onOSuccess = function () {
     $('#winner-message').text('game over')
     // $('.chip').css('background-color', 'yellow')
   }
-    // $('.toast').toast('show')
-    // $('.toast-body').text('O has won!')
+     $('.toast').toast('show')
+     $('.toast-body').text('O has won!')
     $('#turn').css('background-color', '#f2f2f2')
     $('#winchip').css('background-color', '#007bff')
     $('#winner-message').css('color', 'white')
@@ -130,13 +130,32 @@ const onXSuccess = function () {
   } else {
     $('#winner-message').text('game over')
   }
-    // $('.toast').toast('show')
-    // $('.toast-body').text('X has won!')
+     $('.toast').toast('show')
+     $('.toast-body').text('X has won!')
     $('#turn').css('background-color', '#f2f2f2')
     $('#winchip').css('background-color', '#007bff')
     $('#winner-message').css('color', 'white')
     $('#response-message').css('color', 'black')
 }
+
+const onTieSuccess = function () {
+  if ($('#winner-message').text() === 'gameover') {
+    console.log('no more moves')
+  }
+  else if ($('#winner-message').text() === 'who will win?') {
+    $('#winner-message').text('tie!')
+  } else {
+    $('#winner-message').text('game over')
+  }
+      $('.toast').toast('show')
+      $('.toast-body').text('Tie!')
+    $('#turn').css('background-color', '#f2f2f2')
+    $('#winchip').css('background-color', '#007bff')
+    $('#winner-message').css('color', 'white')
+    $('#response-message').css('color', 'black')
+}
+
+
 
 
 
@@ -150,5 +169,6 @@ module.exports = {
   onOSuccess,
   onXSuccess,
   onUpdateWinner,
-  onViewGamesSuccess
+  onViewGamesSuccess,
+  onTieSuccess
 }

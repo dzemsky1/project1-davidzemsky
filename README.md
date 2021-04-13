@@ -16,5 +16,9 @@ Hey! Welcome to my tick-tack-toe app. You can
 register for an account, sign in, start a game, and even track your progress.
 Enjoy!
 
+
+### Wireframes
+https://imgur.com/a/HD17xUv
+
 ### Deployed application
 https://dzemsky1.github.io/project1-davidzemsky/
