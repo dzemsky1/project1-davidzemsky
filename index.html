@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Example</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+    <body>
+      <h1>Tickity Tackity Toe</h1>
+
+      <form id="sign-up-form">
+        <input name="credentials[email]" type="email" placeholder="email">
+        <input name="credentials[password]" type="password" placeholder="password">
+        <input name="credentials[password_confirmation]" type="password" placeholder="confirm password">
+        <button id="sign-up" type="submit" class="btn btn-primary">Sign Up</button>
+        <!-- <input id='submit' type="submit" value="Sign Up"/> -->
+      </form>
+
+      <hr class="dashed">
+
+      <form id="sign-in-form">
+        <input name="credentials[email]" type="email" placeholder="email">
+        <input name="credentials[password]" type="password" placeholder="password">
+        <button id="sign-in" type="submit" class="btn btn-primary">Sign In</button>
+        <!-- <input id='submit' type="submit" value="Sign In"/> -->
+      </form>
+
+
+
+
+      <div id="signed-in-options">
+        <button id="new-game" type="button" class="btn btn-primary">New Game</button>
+      <!-- Button trigger modal -->
+      <button id="view-games" type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
+        Games Played
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Games Played</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p id="demo">test</p>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <button id="restart"> Restart </button> -->
+      <button id="sign-out" type="button" class="btn btn-secondary">Sign Out</button>
+      </div>
+
+
+
+
+
+          <div id='game-options'>
+            <div class="chip">
+              <p id="X-score"> X: 0 </p>
+            </div>
+            <div class="chip">
+              <p id="O-score"> O: 0 </p>
+            </div>
+            <div id='turn' class="chip">
+              <p id="response-message"></p>
+            </div>
+            <div id='winchip' class="chip">
+              <p id="winner-message"></p>
+            </div>
+          </div>
+
+
+      <div id="game-board" class="container">
+          <div class="row h-100">
+            <div id="cell0" data-cell-index='0' class="col-4 box"> </div>
+            <div id="cell1" data-cell-index='1' class="col-4 box"> </div>
+            <div id="cell2" data-cell-index='2' class="col-4 box"> </div>
+            <div id="cell3" data-cell-index='3' class="col-4 box"> </div>
+            <div id="cell4" data-cell-index='4' class="col-4 box"> </div>
+            <div id="cell5" data-cell-index='5' class="col-4 box"> </div>
+            <div id="cell6" data-cell-index='6' class="col-4 box"> </div>
+            <div id="cell7" data-cell-index='7' class="col-4 box"> </div>
+            <div id="cell8" data-cell-index='8' class="col-4 box"> </div>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="position-fixed bottom-0 right-0 p-3" style="z-index: 5; right: 0; bottom: 0;">
+          <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
+            <div class="toast-header">
+              <strong class="mr-auto">An Update For You</strong>
+              <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="toast-body">
+              You're signed up and ready to go!
+            </div>
+          </div>
+        </div>
+
+
+    </body>
+    <footer>
+      <div id="footerdiv">
+      </div>
+</html>
